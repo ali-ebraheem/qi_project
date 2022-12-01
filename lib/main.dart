@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qi_project/business_card.dart';
 
 import 'logo.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         appBarTheme:const AppBarTheme(backgroundColor: Colors.white, elevation: 0),
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: const BusinessCard(),
     );
   }
 }
@@ -49,7 +50,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    return  Scaffold(
+    return
+
+      Scaffold(
 
       body:Form(
         key: formKey,
@@ -176,9 +179,11 @@ class _MyHomePageState extends State<MyHomePage> {
                             borderSide:
                             const  BorderSide(width: 3, color: Color(0xFF3E6C86)),
                             borderRadius: BorderRadius.circular(20),
-                          )),
+                          ),
+                      ),
 
-                    ),),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -206,10 +211,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   color:const Color(0xFF3E6C86),
               ),
                   child:const Center(child:  Text('تم',
-                    style: TextStyle(fontFamily: '29LT Bukra',color: Colors.white,fontSize: 14),)),
-            ))
-        ],),
-      )
+                    style: TextStyle(fontFamily: '29LT Bukra',color: Colors.white,fontSize: 14),
+                  ),
+                  ),
+            ),
+            ),
+        ],
+        ),
+      ),
     );
   }
 }

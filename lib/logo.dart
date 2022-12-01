@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
-
 class LogoScreen extends StatelessWidget {
   final String name;
   final double height;
@@ -26,10 +23,8 @@ class LogoScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Center(child: Container(
-
                       height: 300,
                       width: (width/height)*300,
-
                       color:const Color(0xFF3E6C86),
                       child:Row(
                         mainAxisSize: MainAxisSize.min,
@@ -47,9 +42,7 @@ class LogoScreen extends StatelessWidget {
                                    fontSize: 90,
                                    overflow:TextOverflow.ellipsis,
                                    fontWeight:FontWeight.bold,
-
                                    color: Color(0xFFFFDD00)
-
                            ),
                                   maxLines: 1,  ),
                                 ),
@@ -62,7 +55,8 @@ class LogoScreen extends StatelessWidget {
 
                     ],
                   ),
-    )),
+                 ),
+                  ),
                 ],
               ),
             ),
@@ -86,8 +80,10 @@ class LogoScreen extends StatelessWidget {
                       style: TextStyle(fontFamily: '29LT Bukra',color: Colors.white,fontSize: 16),)),
                   ],
                 ),
-              ))
+              ),
+          ),
         ],
-      ));
+      ),
+    );
   }
 }
