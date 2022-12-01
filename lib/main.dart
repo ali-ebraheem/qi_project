@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qi_project/business_card.dart';
 
+import 'dashboard.dart';
 import 'logo.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         appBarTheme:const AppBarTheme(backgroundColor: Colors.white, elevation: 0),
         primarySwatch: Colors.blue,
       ),
-      home: const BusinessCard(),
+      home: const Dashboard(),
     );
   }
 }

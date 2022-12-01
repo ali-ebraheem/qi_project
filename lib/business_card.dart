@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
 class BusinessCard extends StatelessWidget {
-  const BusinessCard({super.key});
+  final String arabicName;
+  final String englishName;
+  final String positionNameArabic;
+  final String positionNameEnglish;
+  final String email;
+  final String phoneNumber;
+
+
+  const BusinessCard({super.key,required this.arabicName,required this.englishName,required this.positionNameArabic,required this.positionNameEnglish,required this.email,required this.phoneNumber});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +21,7 @@ class BusinessCard extends StatelessWidget {
       body:Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // arabic business card 
+          // arabic business card
           Center(
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -39,12 +47,14 @@ class BusinessCard extends StatelessWidget {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.end,
-                                children:const [
-                                   Text('علي ابراهيم كامل',
-                                    style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold,fontFamily: '29LT Bukra',color: Color(0xFF3E6C86)),),
-                                   Text('ادارة ومعالجة قواعد البيانات',
-                                    style: TextStyle(fontSize: 14,fontWeight: FontWeight.normal ,fontFamily: '29LT Bukra',color: Color(0xFF3E6C86)),),
-                                  SizedBox(height: 20,),
+                                children: [
+                                   Text(arabicName,
+                                    maxLines: 2,
+                                    style:const TextStyle(fontSize: 14,fontWeight: FontWeight.bold,fontFamily: '29LT Bukra',color: Color(0xFF3E6C86)),),
+                                   Text(positionNameArabic,
+                                    maxLines: 2,
+                                    style:const TextStyle(fontSize: 14,fontWeight: FontWeight.normal ,fontFamily: '29LT Bukra',color: Color(0xFF3E6C86)),),
+                                 const SizedBox(height: 20,),
 
 
                                 ],
@@ -62,29 +72,29 @@ class BusinessCard extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
                                     Row(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
                                       mainAxisAlignment: MainAxisAlignment.end,
-                                      children:  const [
-                                        Text("+964",
+                                      children:   [
+                                        const Text("+964",
                                           style: TextStyle(fontSize: 12,
                                               fontWeight: FontWeight.normal ,
-                                              fontFamily: '29LT Bukra',
+                                              fontFamily: 'FontFont',
                                               color: Color(0xFF3E6C86)),),
-                                        SizedBox(width: 5,),
-                                        Text("7727670531",
+                                       const SizedBox(width: 5,),
+                                        Text(phoneNumber,
+                                          style:const TextStyle(fontSize: 12,
+                                              fontWeight: FontWeight.normal ,
+                                              fontFamily: 'FontFont',
+                                              color: Color(0xFF3E6C86)),),
+                                       const SizedBox(width: 10,),
+                                        const Text("جوال",
                                           style: TextStyle(fontSize: 12,
                                               fontWeight: FontWeight.normal ,
-                                              fontFamily: '29LT Bukra',
+                                              fontFamily: 'FontFont',
                                               color: Color(0xFF3E6C86)),),
-                                        SizedBox(width: 10,),
-                                        Text("جوال",
-                                          style: TextStyle(fontSize: 12,
-                                              fontWeight: FontWeight.normal ,
-                                              fontFamily: '29LT Bukra',
-                                              color: Color(0xFF3E6C86)),),
-                                        SizedBox(width: 5,),
+                                       const SizedBox(width: 5,),
 
-                                        Image(image: AssetImage('images/Phone_icon.png'),height: 15,width: 15,),
+                                      const  Image(image: AssetImage('images/Phone_icon.png'),height: 15,width: 15,),
                                       ],
                                     ),
                                     const SizedBox(height: 40,),
@@ -109,26 +119,35 @@ class BusinessCard extends StatelessWidget {
                                     Row(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       mainAxisAlignment: MainAxisAlignment.end,
-                                      children:  const [
-                                        Image(image: AssetImage('images/Email_icon.png'),height: 15,width: 15,),
-                                        SizedBox(width: 5,),
-                                          Text("ali.kamil@qi.iq",
-                                          style: TextStyle(fontSize: 12,
-                                              fontWeight: FontWeight.normal ,
-                                              fontFamily: 'FontFont',
-                                              color: Color(0xFF3E6C86)),),
+                                      children:   [
+                                       const Image(image: AssetImage('images/Email_icon.png'),height: 15,width: 15,),
+                                       const SizedBox(width: 5,),
+                                        SizedBox(
+                                          width: 100,
+
+                                          child: Align(
+                                            alignment: Alignment.centerLeft,
+                                            child:  Text(email,
+                                              softWrap: true,
+                                              maxLines: 2,
+                                              style:const TextStyle(fontSize: 12,
+                                                  fontWeight: FontWeight.normal ,
+                                                  fontFamily: 'FontFont',
+                                                  color: Color(0xFF3E6C86)),),)
+
+                                          ),
 
                                       ],
                                     ),
                                     const SizedBox(height: 5,),
                                     Row(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
                                       mainAxisAlignment: MainAxisAlignment.end,
                                       children:  const [
                                         Image(image: AssetImage('images/Internet_icon.png'),height: 15,width: 15,),
                                         SizedBox(width: 5,),
                                         Text("qi.iq",
-                                          style: TextStyle(fontSize: 14,
+                                          style: TextStyle(fontSize: 12,
                                               fontWeight: FontWeight.normal ,
                                               fontFamily: 'FontFont',
                                               color: Color(0xFF3E6C86)),),
@@ -193,12 +212,12 @@ class BusinessCard extends StatelessWidget {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children:const [
-                                  Text('Ali Ibraheem Kamil',
-                                    style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold,fontFamily: 'FontFont',color: Color(0xFF3E6C86)),),
-                                  Text('Organizational development Supervisor',
-                                    style: TextStyle(fontSize: 14,fontWeight: FontWeight.normal ,fontFamily: 'FontFont',color: Color(0xFF3E6C86)),),
-                                  SizedBox(height: 20,),
+                                children: [
+                                  Text(englishName,
+                                    style:const TextStyle(fontSize: 14,fontWeight: FontWeight.bold,fontFamily: 'FontFont',color: Color(0xFF3E6C86)),),
+                                  Text(positionNameEnglish,
+                                    style: const TextStyle(fontSize: 14,fontWeight: FontWeight.normal ,fontFamily: 'FontFont',color: Color(0xFF3E6C86)),),
+                                 const SizedBox(height: 20,),
 
 
                                 ],
@@ -219,27 +238,35 @@ class BusinessCard extends StatelessWidget {
                                       Row(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         mainAxisAlignment: MainAxisAlignment.end,
-                                        children:  const [
+                                        children:   [
 
-                                          SizedBox(width: 5,),
-                                          Text("ali.kamil@qi.iq",
-                                            style: TextStyle(fontSize: 14,
-                                                fontWeight: FontWeight.normal ,
-                                                fontFamily: 'FontFont',
-                                                color: Color(0xFF3E6C86)),),
-                                          Image(image: AssetImage('images/Email_icon.png'),height: 15,width: 15,),
+                                         const SizedBox(width: 5,),
+                                          SizedBox(
+                                            width: 125,
+
+                                            child: Align(
+                                              alignment: Alignment.centerRight,
+                                              child: Text(email,
+                                                maxLines: 2,
+                                                style:const TextStyle(fontSize: 12,
+                                                    fontWeight: FontWeight.normal ,
+                                                    fontFamily: 'FontFont',
+                                                    color: Color(0xFF3E6C86)),),
+                                            ),
+                                          ),
+                                         const Image(image: AssetImage('images/Email_icon.png'),height: 15,width: 15,),
 
                                         ],
                                       ),
                                       const SizedBox(height: 5,),
                                       Row(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
                                         mainAxisAlignment: MainAxisAlignment.start,
                                         children:  const [
 
                                           SizedBox(width: 5,),
                                           Text("qi.iq",
-                                            style: TextStyle(fontSize: 14,
+                                            style: TextStyle(fontSize: 12,
                                                 fontWeight: FontWeight.normal ,
                                                 fontFamily: 'FontFont',
                                                 color: Color(0xFF3E6C86)),),
@@ -268,25 +295,25 @@ class BusinessCard extends StatelessWidget {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Row(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
                                         mainAxisAlignment: MainAxisAlignment.start,
-                                        children:  const [
-                                          Image(image: AssetImage('images/Phone_icon.png'),height: 15,width: 15,),
-                                          SizedBox(width: 10,),
-                                          Text("mob",
+                                        children:   [
+                                         const Image(image: AssetImage('images/Phone_icon.png'),height: 15,width: 15,),
+                                         const SizedBox(width: 10,),
+                                         const Text("mob",
                                             style: TextStyle(fontSize: 12,
                                                 fontWeight: FontWeight.normal ,
                                                 fontFamily: 'FontFont',
                                                 color: Color(0xFF3E6C86)),),
-                                          SizedBox(width: 5,),
-                                          Text("+964",
+                                         const SizedBox(width: 5,),
+                                        const  Text("+964",
                                             style: TextStyle(fontSize: 12,
                                                 fontWeight: FontWeight.normal ,
                                                 fontFamily: 'FontFont',
                                                 color: Color(0xFF3E6C86)),),
-                                          SizedBox(width: 5,),
-                                          Text("7727670531",
-                                            style: TextStyle(fontSize: 12,
+                                         const SizedBox(width: 5,),
+                                          Text(phoneNumber,
+                                            style:const TextStyle(fontSize: 12,
                                                 fontWeight: FontWeight.normal ,
                                                 fontFamily: 'FontFont',
                                                 color: Color(0xFF3E6C86)),),
