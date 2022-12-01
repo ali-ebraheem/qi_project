@@ -13,7 +13,7 @@ class BusinessCard extends StatelessWidget {
       body:Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // arabic business card
+          // arabic business card 
           Center(
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
