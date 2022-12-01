@@ -69,4 +69,5 @@ flutter:
     - family: FontFont
       fonts:
         - asset: fonts/FontFont-Mark Pro.otf
+        - asset: fonts/FontFont-Bold.otf
 
