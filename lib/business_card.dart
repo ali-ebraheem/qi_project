@@ -7,17 +7,23 @@ class BusinessCard extends StatelessWidget {
   final String positionNameEnglish;
   final String email;
   final String phoneNumber;
+  const BusinessCard(
+      {super.key,
+        required this.arabicName,
+        required this.englishName,
+        required this.positionNameArabic,
+        required this.positionNameEnglish,
 
-
-  const BusinessCard({super.key,required this.arabicName,required this.englishName,required this.positionNameArabic,required this.positionNameEnglish,required this.email,required this.phoneNumber});
-
+        required this.email,
+        required this.phoneNumber});
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(leading: IconButton(onPressed: () {
         Navigator.pop(context);
-      }, icon:const Icon(Icons.arrow_back, color: Color(0xFF3E6C86),size: 30,),),),
+      }, icon:const Icon(Icons.arrow_back,
+        color: Color(0xFF3E6C86),
+        size: 30,),),),
       body:Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -357,7 +363,6 @@ class BusinessCard extends StatelessWidget {
               ),
             ),
           ),
-
         ],
       ),
     );
